@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+.hero {
+    min-height: 100vh;
+    background-image: url("assets/negative-space-black-forest-dawn.jpg");
+    background-size: cover;
+    background-position: center;
+}
+header {
+    padding: 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.hero section h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.hero section p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.home-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px auto 0;
+}
+
+.contact-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.team {
+    background-color: white;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.team h2 {
+    margin-bottom: 50px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 100px;
+    max-width: 900px;
+    margin: 0 auto;
+    
+}
+
+.team-member img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+.quote {
+    background-color: #e5e5e5;
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 10px 15px;
+    text-align: left;
+    
+}
+
+.quote span {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+}
+.quote {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.contact {
+    min-height: 180px;
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 40px 300px;
+}
+.contact p {
+    margin-bottom: 15px;
+}
+
+.contact-address,
+.contact-info,
+.social {
+    text-align: left;
+}
+.social i{
+    display: inline-block;
+    width: 20px;
+    margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+        justify-content: flex-end;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .hero section h1 {
+        font-size: 36px;
+    }
+
+    .hero section p {
+        font-size: 18px;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .contact-address,
+    .contact-info,
+    .social {
+        text-align: center;
+    }
+
+
+    .menu-icon {
+        display: block;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .nav-links {
+        display: none;
+    }
+     #menu-toggle:checked ~ .nav-links {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+
+    .menu-icon {
+        display: block !important;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    #menu-toggle:checked + .menu-icon {
+        font-size: 0;
+    }
+
+    #menu-toggle:checked + .menu-icon::after {
+        content: "×";
+        font-size: 35px;
+    }
+
+}
+
+#menu-toggle:checked ~ .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    transform: translate(-50%, -50%);
+}
